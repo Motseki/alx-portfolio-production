@@ -10,7 +10,7 @@ const DetailsSection = () => {
 
   return (
     <div className="flex flex-col gap-4">
-      <h1 className="mb-3 text-3xl font-bold">Add Hotel</h1>
+      <h1 className="mb-3 text-3xl font-bold">Add Investor</h1>
       <label className="flex-1 text-sm font-bold text-gray-700">
         Name
         <input

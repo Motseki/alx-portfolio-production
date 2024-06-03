@@ -1,7 +1,7 @@
 const Hero = () => {
     return (
-    <div className="p-20 bg-no-repeat bg-cover 
-     bg-center bg-[url('./assets/images-10.jpg')] 
+    <div className="p-20 bg-contain
+     bg-center bg-[url('./assets/img4.jpg')] 
     h-70 w-full
     bg-cyan-600">
 
@@ -10,7 +10,7 @@ const Hero = () => {
           <p className="text-3xl text-white my-5">
             Supercharge your fundraising effort. Secure investments, raise capital,<br/>
             and propel your business forward with confidence.
-          </p>
+          </p>  
         </div>
       </div>
     );

@@ -7,13 +7,13 @@ import {
 import Layout from "./layouts/Layout";
 import Register from "./pages/Register";
 import SignIn from "./pages/SignIn";
-import AddHotel from "./pages/AddHotel";
+// import AddHotel from "./pages/AddHotel";
 import { useAppContext } from "./contexts/AppContext";
 // import MyHotels from "./pages/MyHotels";
 // import EditHotel from "./pages/EditHotel";
 import Search from "./pages/Search";
 // import Detail from "./pages/DetailCompany";
-import Booking from "./pages/Booking";
+// import Booking from "./pages/Booking";
 import MyBookings from "./pages/MyBookings";
 import HomePage from "./pages/Homepage";
 import AboutUs from "./pages/AboutUs";
@@ -37,7 +37,6 @@ const App = () => {
           path="/"
           element={
             <Layout>
-              {/* <Home /> */}
               <HomePage/>
             </Layout>
           }
@@ -56,9 +55,7 @@ const App = () => {
           path="/companies"
           element={
             <Layout>
-              {/* <Home />  */}
               <Company/>
-              {/* <HomePage/> */}
             </Layout>
           }
         />
@@ -118,15 +115,7 @@ const App = () => {
 
         {isLoggedIn && (
           <>
-            <Route
-              path="/hotel/:hotelId/booking"
-              element={
-                <Layout>
-                  <Booking />
-                </Layout>
-              }
-            />
-
+  
             <Route
               path="/add-company"
               element={
@@ -146,27 +135,9 @@ const App = () => {
             />
 
             <Route
-              path="/add-hotel"
-              element={
-                <Layout>
-                  <AddHotel />
-                </Layout>
-              }
-            />
-            {/* <Route
-              path="/edit-hotel/:hotelId"
-              element={
-                <Layout>
-                  <EditHotel />
-                </Layout>
-              }
-            /> */}
-
-            <Route
               path="/edit-company/:companyId"
               element={
                 <Layout>
-                  {/* <EditHotel /> */}
                   <EditCompany/>
                 </Layout>
               }
@@ -180,15 +151,6 @@ const App = () => {
                 </Layout>
               }
             />
-
-          {/* <Route
-              path="/my-hotels"
-              element={
-                <Layout>
-                  <MyHotels />
-                </Layout>
-              }
-            />   */}
 
           <Route
               path="/my-companies"

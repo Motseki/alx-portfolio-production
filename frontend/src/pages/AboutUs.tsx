@@ -12,8 +12,8 @@ const AboutUs = () => {
     
       return (
         <>
-        <div className="p-20 bg-repeat bg-cover 
-          bg-center bg-[url('./assets/images-3.jpg')] 
+        <div className="p-20 bg-contain 
+          bg-center bg-[url('./assets/images-10.jpg')]  
           h-1/2 w-full
           bg-cyan-600">
 
@@ -24,53 +24,36 @@ const AboutUs = () => {
 
         <div className="container flex-1 py-10 mx-auto space-y-3">
         <span className="grid grid-cols-2">
-          <h2 className="text-5xl font-bold w-auto">Your Partner in Business Growth</h2> 
-          <p className="text-xl justify-center font-normal items-center w-auto">Launchpad is always seeking creative startups with dedicated founders. 
-          At Startup Launch Pad, we are your dedicated partners on the path to entrepreneurial success in Ireland. Our mission is 
-          clear: to empower businesses, both budding startups and established enterprises, by providing a comprehensive array of services 
-          that cater to their unique needs. With a focus on business planning, grant applications, networking, AI tech guidance, market research 
-          advice, and supplier connections, we’re committed to being the catalyst for your growth and prosperity.</p>
-    
-            {/* <p className="text-2xl items-center">If your unique African early-stage science or tech-driven 
-            startup is looking for funding from a supportive network of experienced investors, submit an 
-            application for consideration.</p> */}
+          <h2 className="text-4xl font-bold w-auto">A description of what inspired this project</h2> 
+          <p className="text-xl justify-center font-normal items-center w-auto">Many startup companies with great idea often fail to 
+          pursue their dream due to lack of funding opportunities. Most of the time they lack information about where to get the Investors who 
+          will be willing to investor in their businesses. On the other hand the investors also are in the look for trusted and legit 
+          startup business idea to invest their into. Launchpad is closing the gap between the startup companies and Investors by building
+          the platform where it will bring both Investors and startup together. The Launchpad will verify each each company and investor 
+          registering in the platform to ensure transparency and Integrity.
+         </p>
         </span>
         
         <hr/>
         <span className="grid grid-cols-2">
-          <h2 className="text-2xl font-bold w-auto">Mission Statement</h2> 
+          <h2 className="text-4xl font-bold w-auto"> Team member’s Profile</h2> 
           <p className="text-xl font-normal justify-center items-center w-auto">
-          At Startup Launch Pad, our mission is to be the driving force behind the growth and prosperity of businesses in Ireland. We are dedicated to 
-          equipping entrepreneurs and enterprises with the knowledge, resources, and support needed to achieve their goals and make a lasting impact in 
-          their industries. We strive to foster innovation, create connections, and empower businesses to thrive, not just in the Irish market but on the 
-          global stage as well.</p>
+            <h1>Mr. Lebohang Bernard Motseki Profile Links Details</h1>
+            <span className="flex flex-col gap-5 my-5">
+              <a href="https://www.linkedin.com/in/lebohangmotseki/" className="font-medium text-blue-600 dark:text-blue-500 hover:underline">LinkedIn Profile Link</a>
+              <a href="https://github.com/Motseki" className="font-medium text-blue-600 dark:text-blue-500 hover:underline">Github Profile Link</a>
+              <a href="https://x.com/lbmotseki" className="font-medium text-blue-600 dark:text-blue-500 hover:underline">Twitter Profile Link</a>
+            </span>
+          </p>
         </span>
 
         <hr/>
         <span className="grid grid-cols-2">
-          <h2 className="text-2xl font-bold w-auto">Our Core Values</h2> 
+          <h2 className="text-4xl font-bold w-auto">A link to the github repository for the project</h2> 
           <p className="text-xl font-normal justify-center items-center w-auto">     
-            Integrity: We hold ourselves to the highest ethical standards, ensuring transparency, honesty, 
-            and trust in all our interactions.<br/><br/>
-            Innovation: We embrace change and encourage the continuous pursuit of knowledge and cutting-edge solutions to fuel business growth.
-
-            Collaboration: We believe in the power of partnerships, fostering a collaborative ecosystem where businesses can connect, learn from one another, and grow together.
-            <br/><br/>
-            Empowerment: We are dedicated to empowering businesses and entrepreneurs, providing them with the tools and knowledge to take control of their destinies and achieve success.
-            <br/><br/>
-            Community: We value the sense of community and support that comes from like-minded individuals and organizations working together for mutual success.</p>
-        </span>
-
-        <hr/>
-        <span className="grid grid-cols-2">
-          <h2 className="text-2xl font-bold w-auto">Our Philosophy</h2> 
-          <p className="text-xl font-normal justify-center items-center w-auto">     
-          At Startup Launch Pad, we firmly believe that business success is attainable through a combination of informed decision-making, effective networking, and technological innovation. 
-          Our philosophy revolves around the idea that every entrepreneur and business, regardless of size or experience, has the potential to thrive. We are committed to democratizing the 
-          tools and resources required for success and making them accessible to all. By fostering a culture of collaboration, innovation, and empowerment, we aim to create a community of 
-          businesses that not only achieve their goals but also contribute to the growth and vibrancy of the Irish business landscape. Together, we can turn dreams into realities, and 
-          aspirations into achievements.
-         </p> 
+           <h1>Project GitHub Link</h1>
+           <a href="https://github.com/Motseki/alx-portfolio-production" className="font-medium text-blue-600 dark:text-blue-500 hover:underline">Project GitHub Codebase Link</a>
+        </p>
         </span>
 
         <hr/>

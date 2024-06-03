@@ -2,18 +2,9 @@ import { useQuery } from "react-query";
 import { useParams } from "react-router-dom";
 import * as apiClient from "../api-client";
 import { AiFillStar } from "react-icons/ai";
-import GuestInfoForm from "../forms/GuestInfoForm/GuestInfoForm";
 
 const DetailInvestor = () => {
   const { investorId } = useParams();
-
-  // const { data: hotel } = useQuery(
-  //   "fetchHotelById",
-  //   () => apiClient.fetchHotelById(hotelId || ""),
-  //   {
-  //     enabled: !!hotelId,
-  //   }
-  // );
 
   const { data: investor } = useQuery(
     "fetchInvestorById",
@@ -49,23 +40,12 @@ const DetailInvestor = () => {
           </div>
         ))}
       </div>
-
-      <div className="grid grid-cols-1 gap-2 lg:grid-cols-4">
-        {investor.facilities.map((facility) => (
-          <div className="p-3 border rounded-sm border-slate-300">
-            {facility}
-          </div>
-        ))}
-      </div>
-
       <div className="grid grid-cols-1 lg:grid-cols-[2fr_1fr]">
         <div className="whitespace-pre-line">{investor.description}</div>
         <div className="h-fit">
-          <GuestInfoForm
-            pricePerNight={investor.pricePerNight}
-            hotelId={investor._id}
-          />
-        </div>
+        {investor.country}<br/>
+        {investor.city}
+        </div> 
       </div>
     </div>
   );

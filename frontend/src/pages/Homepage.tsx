@@ -13,9 +13,11 @@ const HomePage = () => {
 //   const bottomRowHotels = hotels?.slice(2) || [];
 
   return (
-    <>
+  
+    <> 
     <Hero/>
-    <div className="container flex-1 py-10 mx-auto space-y-3">
+    {/* <div className="bg-[url('./assets/img9.jpg')] bg-contain"> */}
+    <div className="container flex-1 py-10 mx-auto space-y-3 ">
       <span className="flex">
         <span className="flex items-start justify-center">
         <div className="
@@ -60,7 +62,8 @@ const HomePage = () => {
         </span>
         </span>
     </div>
-    </>
+    {/* </div> */}
+    </> 
   );
 };
 
