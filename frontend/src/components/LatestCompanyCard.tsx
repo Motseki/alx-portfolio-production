@@ -6,10 +6,10 @@ type Props = {
   company: CompanyType;
 };
 
-const LatestDestinationCard = ({ company }: Props) => {
+const LatestCompanyCard = ({ company }: Props) => {
   return (
     <Link
-      to={`/detail/${company._id}`}
+      to={`/company-detail/${company._id}`}
       className="relative overflow-hidden rounded-md cursor-pointer"
     >
       <div className="h-[300px]">
@@ -28,4 +28,4 @@ const LatestDestinationCard = ({ company }: Props) => {
   );
 };
 
-export default LatestDestinationCard;
+export default LatestCompanyCard;

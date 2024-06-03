@@ -40,7 +40,7 @@ const Register = () => {
   });
 
   return (
-    <form className="flex flex-col gap-5" onSubmit={onSubmit}>
+    <form className="flex flex-col gap-5 container flex-1 py-10 mx-auto" onSubmit={onSubmit}>
       <h2 className="text-3xl font-bold">Create an Account</h2>
       <div className="flex flex-col gap-5 md:flex-row">
         <label className="flex-1 text-sm font-bold text-gray-700">

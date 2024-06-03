@@ -1,6 +1,10 @@
 const Hero = () => {
     return (
-      <div className="p-20  bg-cyan-600">
+    <div className="p-20 bg-no-repeat bg-cover 
+     bg-center bg-[url('./assets/images-10.jpg')] 
+    h-70 w-full
+    bg-cyan-600">
+
         <div className="container items-center flex flex-col gap-2 mx-auto">
           <h1 className="text-5xl font-bold text-white">Invest And Raise Investments</h1>
           <p className="text-3xl text-white my-5">

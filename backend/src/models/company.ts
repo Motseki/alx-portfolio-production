@@ -1,5 +1,5 @@
 import mongoose from "mongoose";
-import { BookingType, HotelType } from "../shared/types";
+import { BookingType, CompanyType } from "../shared/types";
 
 const bookingSchema = new mongoose.Schema<BookingType>({
   firstName: { type: String, required: true },
@@ -13,7 +13,7 @@ const bookingSchema = new mongoose.Schema<BookingType>({
   totalCost: { type: Number, required: true },
 });
 
-const hotelSchema = new mongoose.Schema<HotelType>({
+const companySchema = new mongoose.Schema<CompanyType>({
   userId: { type: String, required: true },
   name: { type: String, required: true },
   city: { type: String, required: true },
@@ -30,5 +30,5 @@ const hotelSchema = new mongoose.Schema<HotelType>({
   bookings: [bookingSchema],
 });
 
-const Hotel = mongoose.model<HotelType>("Hotel", hotelSchema);
-export default Hotel;
+const Company = mongoose.model<CompanyType>("Company", companySchema);
+export default Company;

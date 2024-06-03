@@ -4,10 +4,10 @@ import TypeSection from "./TypeSection";
 // import FacilitiesSection from "./FacilitiesSection";
 // import GuestsSection from "./GuestsSection";
 import ImagesSection from "./ImagesSection";
-import { HotelType } from "../../../../backend/src/shared/types";
+import { CompanyType } from "../../../../backend/src/shared/types";
 import { useEffect } from "react";
 
-export type HotelFormData = {
+export type CompanyFormData = {
   name: string;
   city: string;
   country: string;
@@ -23,23 +23,23 @@ export type HotelFormData = {
 };
 
 type Props = {
-  hotel?: HotelType;
+  company?: CompanyType;
   onSave: (hotelFormData: FormData) => void;
   isLoading: boolean;
 };
 
-const ManageHotelForm = ({ onSave, isLoading, hotel }: Props) => {
-  const formMethods = useForm<HotelFormData>();
+const ManageCompanyForm = ({ onSave, isLoading, company }: Props) => {
+  const formMethods = useForm<CompanyFormData>();
   const { handleSubmit, reset } = formMethods;
 
   useEffect(() => {
-    reset(hotel);
-  }, [hotel, reset]);
+    reset(company);
+  }, [company, reset]);
 
-  const onSubmit = handleSubmit((formDataJson: HotelFormData) => {
+  const onSubmit = handleSubmit((formDataJson: CompanyFormData) => {
     const formData = new FormData();
-    if (hotel) {
-      formData.append("hotelId", hotel._id);
+    if (company) {
+      formData.append("companyId", company._id);
     }
     formData.append("name", formDataJson.name);
     formData.append("city", formDataJson.city);
@@ -90,4 +90,4 @@ const ManageHotelForm = ({ onSave, isLoading, hotel }: Props) => {
   );
 };
 
-export default ManageHotelForm;
+export default ManageCompanyForm;
