@@ -1,17 +1,5 @@
 import mongoose from "mongoose";
-import { BookingType, CompanyType } from "../shared/types";
-
-const bookingSchema = new mongoose.Schema<BookingType>({
-  firstName: { type: String, required: true },
-  lastName: { type: String, required: true },
-  email: { type: String, required: true },
-  adultCount: { type: Number, required: true },
-  childCount: { type: Number, required: true },
-  checkIn: { type: Date, required: true },
-  checkOut: { type: Date, required: true },
-  userId: { type: String, required: true },
-  totalCost: { type: Number, required: true },
-});
+import { CompanyType } from "../shared/types";
 
 const companySchema = new mongoose.Schema<CompanyType>({
   userId: { type: String, required: true },
@@ -20,15 +8,10 @@ const companySchema = new mongoose.Schema<CompanyType>({
   country: { type: String, required: true },
   description: { type: String, required: true },
   type: { type: String, required: true },
-  adultCount: { type: Number, required: false },
-  childCount: { type: Number, required: false },
-  facilities: [{ type: String, required: false }],
-  pricePerNight: { type: Number, required: false },
-  starRating: { type: Number, required: false, min: 1, max: 5 },
   imageUrls: [{ type: String, required: true }],
   lastUpdated: { type: Date, required: true },
-  bookings: [bookingSchema],
 });
 
+//This code will create the table name Company in MongoDB with the above mentioned field names
 const Company = mongoose.model<CompanyType>("Company", companySchema);
 export default Company;

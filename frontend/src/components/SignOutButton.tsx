@@ -24,7 +24,6 @@ const SignOutButton = () => {
     <button
       onClick={handleClick}
       className="flex items-center px-5 py-4 rounded  font-bold text-white bg-emerald-500 hover:bg-emerald-300"
-      // className="px-3 font-bold text-blue-600 bg-white hover:bg-gray-100 "
     >
       Sign Out
     </button>

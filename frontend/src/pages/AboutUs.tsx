@@ -1,15 +1,5 @@
-// import { useQuery } from "react-query";
-// import * as apiClient from "../api-client";
-// import LatestDestinationCard from "../components/LatestDestinationCard";
-
 const AboutUs = () => {
-    //   const { data: hotels } = useQuery("fetchQuery", () =>
-    //     apiClient.fetchHotels()
-    //   );
-    
-    //   const topRowHotels = hotels?.slice(0, 2) || [];
-    //   const bottomRowHotels = hotels?.slice(2) || [];
-    
+  
       return (
         <>
         <div className="p-20 bg-contain 

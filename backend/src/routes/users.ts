@@ -21,6 +21,7 @@ router.get("/me", verifyToken, async (req: Request, res: Response) => {
   }
 });
 
+//This endpoint code will register user in the MongoDB for login to the system
 router.post(
   "/register",
   [

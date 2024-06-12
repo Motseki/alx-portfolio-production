@@ -1,22 +1,11 @@
-// import { useQuery } from "react-query";
-// import * as apiClient from "../api-client";
-// import LatestDestinationCard from "../components/LatestDestinationCard";
-
 import Hero from "../components/Hero";
 
 const HomePage = () => {
-//   const { data: hotels } = useQuery("fetchQuery", () =>
-//     apiClient.fetchHotels()
-//   );
-
-//   const topRowHotels = hotels?.slice(0, 2) || [];
-//   const bottomRowHotels = hotels?.slice(2) || [];
 
   return (
   
     <> 
     <Hero/>
-    {/* <div className="bg-[url('./assets/img9.jpg')] bg-contain"> */}
     <div className="container flex-1 py-10 mx-auto space-y-3 ">
       <span className="flex">
         <span className="flex items-start justify-center">
@@ -62,7 +51,6 @@ const HomePage = () => {
         </span>
         </span>
     </div>
-    {/* </div> */}
     </> 
   );
 };

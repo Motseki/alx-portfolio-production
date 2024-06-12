@@ -1,5 +1,4 @@
 import { useFormContext } from "react-hook-form";
-// import { HotelFormData } from "./ManageHotelForm";
 import { InvestorFormData } from "./ManageInvestorForm";
 
 const DetailsSection = () => {
@@ -58,37 +57,6 @@ const DetailsSection = () => {
           <span className="text-red-500">{errors.description.message}</span>
         )}
       </label>
-      {/* <label className="text-gray-700 text-sm font-bold max-w-[50%]">
-        Price Per Night
-        <input
-          type="number"
-          min={1}
-          className="w-full px-2 py-1 font-normal border rounded"
-          {...register("pricePerNight", { required: "This field is required" })}
-        ></input>
-        {errors.pricePerNight && (
-          <span className="text-red-500">{errors.pricePerNight.message}</span>
-        )}
-      </label>  */}
-      {/* <label className="text-gray-700 text-sm font-bold max-w-[50%]">
-        Star Rating
-        <select
-          {...register("starRating", {
-            required: "This field is required",
-          })}
-          className="w-full p-2 font-normal text-gray-700 border rounded"
-        >
-          <option value="" className="text-sm font-bold">
-            Select as Rating
-          </option>
-          {[1, 2, 3, 4, 5].map((num) => (
-            <option value={num}>{num}</option>
-          ))}
-        </select>
-        {errors.starRating && (
-          <span className="text-red-500">{errors.starRating.message}</span>
-        )}
-      </label>  */}
     </div>
   );
 };

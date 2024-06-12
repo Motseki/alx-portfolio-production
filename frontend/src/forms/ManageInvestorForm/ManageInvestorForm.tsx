@@ -1,8 +1,6 @@
 import { FormProvider, useForm } from "react-hook-form";
 import DetailsSection from "./DetailsSection";
 import TypeSection from "./TypeSection";
-// import FacilitiesSection from "./FacilitiesSection";
-// import GuestsSection from "./GuestsSection";
 import ImagesSection from "./ImagesSection";
 import { InvestorType } from "../../../../backend/src/shared/types";
 import { useEffect } from "react";
@@ -13,13 +11,8 @@ export type InvestorFormData = {
   country: string;
   description: string;
   type: string;
-  pricePerNight: number;
-  starRating: number;
-  facilities: string[];
   imageFiles: FileList;
   imageUrls: string[];
-  adultCount: number;
-  childCount: number;
 };
 
 type Props = {
@@ -46,15 +39,7 @@ const ManageInvestorForm = ({ onSave, isLoading, investor }: Props) => {
     formData.append("country", formDataJson.country);
     formData.append("description", formDataJson.description);
     formData.append("type", formDataJson.type);
-    // formData.append("pricePerNight", formDataJson.pricePerNight.toString());
-    // formData.append("starRating", formDataJson.starRating.toString());
-    // formData.append("adultCount", formDataJson.adultCount.toString());
-    // formData.append("childCount", formDataJson.childCount.toString());
-
-    // formDataJson.facilities.forEach((facility, index) => {
-    //    formData.append(`facilities[${index}]`, facility);
-    //  });
-
+   
     if (formDataJson.imageUrls) {
       formDataJson.imageUrls.forEach((url, index) => {
         formData.append(`imageUrls[${index}]`, url);
@@ -73,8 +58,6 @@ const ManageInvestorForm = ({ onSave, isLoading, investor }: Props) => {
       <form className="flex flex-col gap-10 container flex-1 py-10 mx-auto" onSubmit={onSubmit}>
         <DetailsSection />
         <TypeSection />
-        {/* <FacilitiesSection />  */}
-        {/* <GuestsSection />  */}
         <ImagesSection />
         <span className="flex justify-end">
           <button

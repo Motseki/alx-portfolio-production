@@ -1,11 +1,9 @@
 import express, { Request, Response } from "express";
 import multer from "multer";
 import cloudinary from "cloudinary";
-// import Hotel from "../models/hotel";
 import Investor from "../models/investor";
 import verifyToken from "../middleware/auth";
 import { body } from "express-validator";
-// import { HotelType } from "../shared/types";
 import { InvestorType } from "../shared/types";
 
 const router = express.Router();
@@ -26,32 +24,24 @@ router.post(
     body("city").notEmpty().withMessage("City is required"),
     body("country").notEmpty().withMessage("Country is required"),
     body("description").notEmpty().withMessage("Description is required"),
-    body("type").notEmpty().withMessage("Hotel type is required"),
-    body("pricePerNight")
-      .notEmpty()
-      .isNumeric()
-      .withMessage("Price per night is required and must be a number"),
-    body("facilities")
-      .notEmpty()
-      .isArray()
-      .withMessage("Facilities are required"),
+    body("type").notEmpty().withMessage("Company type is required"),
   ],
   upload.array("imageFiles", 6),
   async (req: Request, res: Response) => {
     try {
       const imageFiles = req.files as Express.Multer.File[];
-      const newHotel: InvestorType = req.body;
+      const newInvestor: InvestorType = req.body;
 
       const imageUrls = await uploadImages(imageFiles);
 
-      newHotel.imageUrls = imageUrls;
-      newHotel.lastUpdated = new Date();
-      newHotel.userId = req.userId;
+      newInvestor.imageUrls = imageUrls;
+      newInvestor.lastUpdated = new Date();
+      newInvestor.userId = req.userId;
 
-      const hotel = new Investor(newHotel);
-      await hotel.save();
+      const investor = new Investor(newInvestor);
+      await investor.save();
 
-      res.status(201).send(hotel);
+      res.status(201).send(investor);
     } catch (e) {
       console.log(e);
       res.status(500).json({ message: "Something went wrong" });
@@ -61,28 +51,28 @@ router.post(
 
 router.get("/", verifyToken, async (req: Request, res: Response) => {
   try {
-    const hotels = await Investor.find({ userId: req.userId });
-    res.json(hotels);
+    const investors = await Investor.find({ userId: req.userId });
+    res.json(investors);
   } catch (error) {
-    res.status(500).json({ message: "Error fetching hotels" });
+    res.status(500).json({ message: "Error fetching Investors" });
   }
 });
 
 router.get("/:id", verifyToken, async (req: Request, res: Response) => {
   const id = req.params.id.toString();
   try {
-    const hotel = await Investor.findOne({
+    const investor = await Investor.findOne({
       _id: id,
       userId: req.userId,
     });
-    res.json(hotel);
+    res.json(investor);
   } catch (error) {
-    res.status(500).json({ message: "Error fetching hotels" });
+    res.status(500).json({ message: "Error fetching Investors" });
   }
 });
 
 router.put(
-  "/:hotelId",
+  "/:investorId",
   verifyToken,
   upload.array("imageFiles"),
   async (req: Request, res: Response) => {
@@ -90,29 +80,29 @@ router.put(
       const updatedInvestor: InvestorType = req.body;
       updatedInvestor.lastUpdated = new Date();
 
-      const hotel = await Investor.findOneAndUpdate(
+      const investor = await Investor.findOneAndUpdate(
         {
-          _id: req.params.hotelId,
+          _id: req.params.investorId,
           userId: req.userId,
         },
         updatedInvestor,
         { new: true }
       );
 
-      if (!hotel) {
-        return res.status(404).json({ message: "Hotel not found" });
+      if (!investor) {
+        return res.status(404).json({ message: "Investor not found" });
       }
 
       const files = req.files as Express.Multer.File[];
       const updatedImageUrls = await uploadImages(files);
 
-      hotel.imageUrls = [
+      investor.imageUrls = [
         ...updatedImageUrls,
         ...(updatedInvestor.imageUrls || []),
       ];
 
-      await hotel.save();
-      res.status(201).json(hotel);
+      await investor.save();
+      res.status(201).json(investor);
     } catch (error) {
       res.status(500).json({ message: "Something went throw" });
     }

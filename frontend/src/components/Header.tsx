@@ -13,37 +13,8 @@ const Header = () => {
           <span className="flex items-center justify-center text-zinc-400 text-lg">AFRICAN STARTUP NETWORK</span>
           </Link>
         </span>
+
         <span className="flex text-xl space-x-2">
-          {/* <span className="flex text-xl space-x-2 mx-20">
-              <Link
-                className="flex items-center px-3 font-bold text-emerald-900 active:text-red-500 hover:text-emerald-500"
-                to="/my-bookings"
-              >
-                HOME
-              </Link>
-
-              <Link
-                className="flex items-center px-3 font-bold text-emerald-900 active:text-red-500 hover:text-emerald-500"
-                to="/about-us"
-              >
-                ABOUT US
-              </Link>
-
-              <Link
-                className="flex items-center px-3 font-bold text-emerald-900 active:text-red-500 hover:text-emerald-500"
-                to="/companies"
-              >
-                ENTREPRENEURS
-              </Link>
-
-              <Link
-                className="flex items-center px-3 font-bold text-emerald-900 active:text-red-500 hover:text-emerald-500"
-                to="/investors"
-              >
-                INVESTORS
-              </Link>
-            </span> */}
-
           {isLoggedIn ? (
             <>
 
@@ -62,34 +33,13 @@ const Header = () => {
                 ABOUT US
               </Link> 
 
-              {/* <Link
-                className="flex items-center px-3 font-bold text-emerald-900 active:text-red-500 hover:text-emerald-500"
-                to="/companies"
-              >
-                ENTREPRENEURS
-              </Link> */}
-
-              {/* <Link
-                className="flex items-center px-3 font-bold text-emerald-900 active:text-red-500 hover:text-emerald-500"
-                to="/investors"
-              >
-                INVESTORS
-              </Link> */}
-            {/* </span> */}
-              {/* <Link
-                className="flex items-center px-3 font-bold text-emerald-900 hover:text-emerald-500"
-                to="/my-bookings"
-              > */}
                <Link
                 className="flex items-center px-3 font-bold text-emerald-900 hover:text-emerald-500"
                 to="/my-investors"
               >
                 My Investors
               </Link>
-              {/* <Link
-                className="flex items-center px-3 font-bold text-emerald-900 hover:text-emerald-500"
-                to="/my-hotels"
-              > */}
+             
               <Link
                 className="flex items-center px-3 font-bold text-emerald-900 hover:text-emerald-500"
                 to="/my-companies"
@@ -98,7 +48,6 @@ const Header = () => {
               </Link>
               </span>
               <SignOutButton />
-              {/* </span> */}
             </>
           ) : (
 

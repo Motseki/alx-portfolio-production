@@ -1,7 +1,6 @@
 import { useQuery } from "react-query";
 import { useParams } from "react-router-dom";
 import * as apiClient from "../api-client";
-import { AiFillStar } from "react-icons/ai";
 
 const DetailInvestor = () => {
   const { investorId } = useParams();
@@ -21,11 +20,6 @@ const DetailInvestor = () => {
   return (
     <div className="container flex-1 py-10 mx-auto space-y-6">
       <div>
-        <span className="flex">
-          {Array.from({ length: investor.starRating }).map(() => (
-            <AiFillStar className="fill-yellow-400" />
-          ))}
-        </span>
         <h1 className="text-3xl font-bold">{investor.name}</h1>
       </div>
 

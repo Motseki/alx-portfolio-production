@@ -2,17 +2,9 @@ import { useQuery } from "react-query";
 import { Link } from "react-router-dom";
 import * as apiClient from "../api-client";
 import { BsBuilding, BsMap } from "react-icons/bs";
-// import { BiHotel, BiMoney, BiStar } from "react-icons/bi";
 
 const MyInvestors = () => {
-  // const { data: hotelData } = useQuery(
-  //   "fetchMyHotels",
-  //   apiClient.fetchMyHotels,
-  //   {
-  //     onError: () => {},
-  //   }
-  // );
-
+ 
   const { data: investorData } = useQuery(
     "fetchMyInvestors",
     apiClient.fetchMyInvestors,

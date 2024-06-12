@@ -1,6 +1,5 @@
 import { useFormContext } from "react-hook-form";
-import { hotelTypes } from "../../config/hotel-options-config";
-// import { HotelFormData } from "./ManageHotelForm";
+import { companyTypes } from "../../config/company-options-config";
 import { CompanyFormData } from "./ManageCompanyForm";
 
 const TypeSection = () => {
@@ -16,7 +15,7 @@ const TypeSection = () => {
     <div>
       <h2 className="mb-3 text-2xl font-bold">Type</h2>
       <div className="grid grid-cols-5 gap-2">
-        {hotelTypes.map((type) => (
+        {companyTypes.map((type) => (
           <label
             className={
               typeWatch === type

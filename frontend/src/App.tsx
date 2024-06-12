@@ -7,14 +7,7 @@ import {
 import Layout from "./layouts/Layout";
 import Register from "./pages/Register";
 import SignIn from "./pages/SignIn";
-// import AddHotel from "./pages/AddHotel";
 import { useAppContext } from "./contexts/AppContext";
-// import MyHotels from "./pages/MyHotels";
-// import EditHotel from "./pages/EditHotel";
-import Search from "./pages/Search";
-// import Detail from "./pages/DetailCompany";
-// import Booking from "./pages/Booking";
-import MyBookings from "./pages/MyBookings";
 import HomePage from "./pages/Homepage";
 import AboutUs from "./pages/AboutUs";
 import AddCompany from "./pages/AddCompany";
@@ -65,15 +58,6 @@ const App = () => {
           element={
             <Layout>
               <Investor/>
-            </Layout>
-          }
-        />
-
-        <Route
-          path="/search"
-          element={
-            <Layout>
-              <Search />
             </Layout>
           }
         />
@@ -166,15 +150,6 @@ const App = () => {
               element={
                 <Layout>
                   <MyInvestors/>
-                </Layout>
-              }
-            />
-
-            <Route
-              path="/my-company-bookings"
-              element={
-                <Layout>
-                  <MyBookings />
                 </Layout>
               }
             />

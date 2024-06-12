@@ -1,11 +1,9 @@
 import express, { Request, Response } from "express";
 import multer from "multer";
 import cloudinary from "cloudinary";
-// import Hotel from "../models/hotel";
 import Company from "../models/company";
 import verifyToken from "../middleware/auth";
 import { body } from "express-validator";
-// import { HotelType } from "../shared/types";
 import { CompanyType } from "../shared/types";
 
 const router = express.Router();
@@ -26,32 +24,24 @@ router.post(
     body("city").notEmpty().withMessage("City is required"),
     body("country").notEmpty().withMessage("Country is required"),
     body("description").notEmpty().withMessage("Description is required"),
-    body("type").notEmpty().withMessage("Hotel type is required"),
-    body("pricePerNight")
-      .notEmpty()
-      .isNumeric()
-      .withMessage("Price per night is required and must be a number"),
-    body("facilities")
-      .notEmpty()
-      .isArray()
-      .withMessage("Facilities are required"),
+    body("type").notEmpty().withMessage("Company type is required"),
   ],
   upload.array("imageFiles", 6),
   async (req: Request, res: Response) => {
     try {
       const imageFiles = req.files as Express.Multer.File[];
-      const newHotel: CompanyType = req.body;
+      const newCompany: CompanyType = req.body;
 
       const imageUrls = await uploadImages(imageFiles);
 
-      newHotel.imageUrls = imageUrls;
-      newHotel.lastUpdated = new Date();
-      newHotel.userId = req.userId;
+      newCompany.imageUrls = imageUrls;
+      newCompany.lastUpdated = new Date();
+      newCompany.userId = req.userId;
 
-      const hotel = new Company(newHotel);
-      await hotel.save();
+      const company = new Company(newCompany);
+      await company.save();
 
-      res.status(201).send(hotel);
+      res.status(201).send(company);
     } catch (e) {
       console.log(e);
       res.status(500).json({ message: "Something went wrong" });
@@ -61,28 +51,28 @@ router.post(
 
 router.get("/", verifyToken, async (req: Request, res: Response) => {
   try {
-    const hotels = await Company.find({ userId: req.userId });
-    res.json(hotels);
+    const companies = await Company.find({ userId: req.userId });
+    res.json(companies);
   } catch (error) {
-    res.status(500).json({ message: "Error fetching hotels" });
+    res.status(500).json({ message: "Error fetching companies" });
   }
 });
 
 router.get("/:id", verifyToken, async (req: Request, res: Response) => {
   const id = req.params.id.toString();
   try {
-    const hotel = await Company.findOne({
+    const company = await Company.findOne({
       _id: id,
       userId: req.userId,
     });
-    res.json(hotel);
+    res.json(company);
   } catch (error) {
-    res.status(500).json({ message: "Error fetching hotels" });
+    res.status(500).json({ message: "Error fetching companies" });
   }
 });
 
 router.put(
-  "/:hotelId",
+  "/:companyId",
   verifyToken,
   upload.array("imageFiles"),
   async (req: Request, res: Response) => {
@@ -90,29 +80,29 @@ router.put(
       const updatedCompany: CompanyType = req.body;
       updatedCompany.lastUpdated = new Date();
 
-      const hotel = await Company.findOneAndUpdate(
+      const company = await Company.findOneAndUpdate(
         {
-          _id: req.params.hotelId,
+          _id: req.params.companyId,
           userId: req.userId,
         },
         updatedCompany,
         { new: true }
       );
 
-      if (!hotel) {
-        return res.status(404).json({ message: "Hotel not found" });
+      if (!company) {
+        return res.status(404).json({ message: "Company not found" });
       }
 
       const files = req.files as Express.Multer.File[];
       const updatedImageUrls = await uploadImages(files);
 
-      hotel.imageUrls = [
+      company.imageUrls = [
         ...updatedImageUrls,
         ...(updatedCompany.imageUrls || []),
       ];
 
-      await hotel.save();
-      res.status(201).json(hotel);
+      await company.save();
+      res.status(201).json(company);
     } catch (error) {
       res.status(500).json({ message: "Something went throw" });
     }
