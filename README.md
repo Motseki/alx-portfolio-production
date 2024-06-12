@@ -11,19 +11,19 @@
 ### author(s) LinkedIn: https://www.linkedin.com/in/lebohangmotseki/
 
 
-##Installation and Usage
+## Installation and Usage
 ### To run this project locally to your machine, follow the these steps:
 ### 1. Clone the repository: git clone https://github.com/your-repo.git
 ### 2. Clone the repository: cd to Clone folder
 ### 3. Clone the repository: run npm install
 ### 4. Clone the repository: run npm run dev
 
-##Contributing
+## Contributing
 
 ## Contributions are welcome! If you find any issues or have suggestion on how to improve some featues, please create a new issue or submit a pull request. Make sure to follow the project's code of conduct.
 
-##Licensing
+## Licensing
 
-###This project does not contain any license. 
+### This project does not contain any license. 
 
 
