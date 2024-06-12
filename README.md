@@ -23,7 +23,7 @@
 
 ## Contributing
 
-### Contributions are welcome! If you find any issues or have suggestion on how to improve some featues, please create a new issue or submit a pull request. Make sure to follow the project's code of conduct.
+#### Contributions are welcome! If you find any issues or have suggestion on how to improve some featues, please create a new issue or submit a pull request. Make sure to follow the project's code of conduct.
 
 ## Licensing
 
